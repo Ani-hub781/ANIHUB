@@ -14,30 +14,60 @@
 
         .navbar {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            align-items: center;
             background-color: #f8f8f8;
             padding: 10px 20px;
         }
 
-        .navbar a {
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links a {
             text-decoration: none;
             color: black;
             margin: 0 15px;
             font-size: 18px;
         }
 
-        .navbar a:hover {
+        .nav-links a:hover {
             text-decoration: underline;
         }
 
-        .image-container {
-            text-align: center;
+        .image-container img {
+            width: 100%;
+            max-width: 1350px;
+            height: auto;
+        }
+
+        .video-container {
             margin-top: 20px;
         }
 
-        .image-container img {
-            width: 1350px;
-            height: 290px;
+        .video-container a {
+            display: inline-block;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
         }
 
         #apps-list {
@@ -56,15 +86,45 @@
         #apps-list a:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #f8f8f8;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                text-align: center;
+            }
+
+            .nav-links a {
+                padding: 10px;
+                border-top: 1px solid #ccc;
+                display: block;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="navbar">
-        <a href="home.html">Home</a>
-        <a href="about us.html">About Us</a>
-        <a href="contact us.html">Contact Us</a>
-        <a href="Animation NC II.html">ANIMATION NC II</a>
+        <span class="menu-icon" onclick="toggleMenu()">☰</span>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about us.html">About Us</a>
+            <a href="contact us.html">Contact Us</a>
+            <a href="Animation NC II.html">ANIMATION NC II</a>
+        </div>
     </div>
 
     <hr>
@@ -81,10 +141,11 @@
 
     <div class="video-container">
         <h4>Video Tutorial</h4>
-        <video controls loop width="500">
-            <source src="LEARN TO DRAW FROM 0 to 100! _ Roadmap_ DrawlikeaSir.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <a href="https://www.youtube.com/@drawlikeasir" target="_blank">
+            <video controls loop>
+                <source src="LEARN TO DRAW FROM 0 to 100! _ Roadmap_ DrawlikeaSir.mp4" type="video/mp4">
+            </video>
+        </a>
     </div>
 
     <button onclick="showApps()">Show Free Apps</button>
@@ -103,6 +164,10 @@
     <script>
         function showApps() {
             document.getElementById("apps-list").style.display = "block";
+        }
+
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("show");
         }
     </script>
 
