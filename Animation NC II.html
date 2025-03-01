@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +6,59 @@
     <title>View PDF Only</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
-            margin-top: 20px;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: white;
+        }
+
+        .navbar {
+            background-color: #ff9800;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(255, 165, 0, 0.5);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            animation: slideDown 0.8s ease-in-out;
+        }
+
+        .nav-btn {
+            display: inline-block;
+            background-color: white;
+            color: #111;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .nav-btn:hover {
+            background-color: #222;
+            color: #ff9800;
+            box-shadow: 0px 0px 10px rgba(255, 165, 0, 0.8);
+        }
+
+        h1 {
+            margin-top: 100px;
+            font-size: 28px;
+            animation: fadeInDown 1s ease-in-out;
         }
 
         iframe {
             width: 80%;
             height: 600px;
             border: none;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         body, iframe {
@@ -24,6 +66,32 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-100px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .nav-btn {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+            iframe {
+                width: 95%;
+                height: 500px;
+            }
         }
     </style>
     <script>
@@ -34,12 +102,16 @@
 </head>
 <body>
 
+    <div class="navbar">
+        <a href="home.html" class="nav-btn">Home</a>
+        <a href="about us.html" class="nav-btn">About Us</a>
+        <a href="contact us.html" class="nav-btn">Contact Us</a>
+    </div>
+
     <h1>View PDF (No Download Allowed)</h1>
 
     <iframe src="Adobe-Scan-Feb-05-2025_compressed.pdf" allow="fullscreen"></iframe>
-    <iframe src="Adobe-Scan-Feb-05-2025-1_compressed (1).pdf" allow="function"></iframe>
+    <iframe src="Adobe-Scan-Feb-05-2025-1_compressed (1).pdf" allow="fullscreen"></iframe>
+
+</body>
 </html>
-
-
-
-
