@@ -110,23 +110,25 @@
     <h1>Picture Gallery</h1>
 
     <div class="gallery">
-        <div class="folder" onclick="openFolder('folder1.html')">Folder 1</div>
-        <div class="folder" onclick="openFolder('folder2.html')">Folder 2</div>
-        <div class="folder" onclick="openFolder('folder3.html')">Folder 3</div>
-        <div class="folder" onclick="openFolder('folder4.html')">Folder 4</div>
-        <div class="folder" onclick="openFolder('folder5.html')">Folder 5</div>
-        <div class="folder" onclick="openFolder('folder6.html')">Folder 6</div>
-        <div class="folder" onclick="openFolder('folder7.html')">Folder 7</div>
+        <div class="folder" onclick="openFolder('Folder1')">Folder 1</div>
+        <div class="folder" onclick="openFolder('Folder2')">Folder 2</div>
+        <div class="folder" onclick="openFolder('Folder3')">Folder 3</div>
+        <div class="folder" onclick="openFolder('Folder4')">Folder 4</div>
+        <div class="folder" onclick="openFolder('Folder5')">Folder 5</div>
+        <div class="folder" onclick="openFolder('Folder6')">Folder 6</div>
+        <div class="folder" onclick="openFolder('Folder7')">Folder 7</div>
     </div>
 
     <script>
-        function openFolder(page) {
-            window.location.href = page;
+        function openFolder(folderName) {
+            let githubUsername = "Ani-hub781";  // Your GitHub username
+            let repoName = "ANIHUB";  // Your repository name
+            let branch = "main";  // Change if using a different branch
+
+            let folderURL = `https://github.com/${githubUsername}/${repoName}/tree/${branch}/${folderName}`;
+            window.open(folderURL, "_blank");
         }
     </script>
-
-</body>
-</html>
 
 </body>
 </html>
