@@ -62,18 +62,20 @@
         }
 
         .folder {
-            width: 150px;
+            width: 200px;
             height: 120px;
             background-color: #ffcc00;
             border-radius: 10px 10px 5px 5px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
+            text-align: center;
             cursor: pointer;
             box-shadow: 0 5px 10px rgba(255, 204, 0, 0.5);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            padding: 10px;
         }
 
         .folder:hover {
@@ -96,6 +98,12 @@
                 font-size: 14px;
                 padding: 10px 15px;
             }
+            .folder {
+                width: 90%;
+                height: auto;
+                font-size: 14px;
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -103,20 +111,20 @@
 
     <div class="navbar">
         <a href="home.html" class="nav-btn">Home</a>
-        <a href="about us.html" class="nav-btn">About Us</a>
-        <a href="contact us.html" class="nav-btn">Contact Us</a>
+        <a href="about_us.html" class="nav-btn">About Us</a>
+        <a href="contact_us.html" class="nav-btn">Contact Us</a>
     </div>
 
     <h1>Picture Gallery</h1>
 
     <div class="gallery">
-        <div class="folder" onclick="openFolder('Folder1')">Folder 1</div>
-        <div class="folder" onclick="openFolder('Folder2')">Folder 2</div>
-        <div class="folder" onclick="openFolder('Folder3')">Folder 3</div>
-        <div class="folder" onclick="openFolder('Folder4')">Folder 4</div>
-        <div class="folder" onclick="openFolder('Folder5')">Folder 5</div>
-        <div class="folder" onclick="openFolder('Folder6')">Folder 6</div>
-        <div class="folder" onclick="openFolder('Folder7')">Folder 7</div>
+        <div class="folder" onclick="openFolder('Perspective Drawing')">Perspective Drawing</div>
+        <div class="folder" onclick="openFolder('Pencil Shading and Tonal Values')">Pencil Shading and Tonal Values</div>
+        <div class="folder" onclick="openFolder('Steps in Animating a Scene')">Steps in Animating a Scene</div>
+        <div class="folder" onclick="openFolder('6 Steps of Animation')">6 Steps of Animation</div>
+        <div class="folder" onclick="openFolder('Holding Your Pencil')">Holding Your Pencil</div>
+        <div class="folder" onclick="openFolder('Head Features (Construction of the HEAD)')">Head Features (Construction of the HEAD)</div>
+        <div class="folder" onclick="openFolder('Body built using Circular and Rounded')">Body Built Using Circular and Rounded</div>
     </div>
 
     <script>
